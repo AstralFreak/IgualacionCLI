@@ -11,20 +11,20 @@ public class IgualacionCLI {
         /*System.Scanner*/
 /* Inicializar las variables para nombre y apellidos del sujeto, nombre y apellidos del aplicador u numero de caso*/
 
-            String Nsujeto;
-            String Asujeto;
-            int numero;
-            String Naplicador;
-            String Aaplicador;
-            String inciso;
+            String NommbreSujeto;
+            String ApellidosSujeto;
+            int NumeroCaso;
+            String NombreAplicador;
+            String ApellidoAplicador;
+            String Inciso;
         /*Se asignan valores temporales a las variables con el proposito de demostracion */
 
-            Nsujeto = "Carlos";
-            Asujeto ="Rodriguez";
-            numero = 10101010;
-            Naplicador = "Pancho";
-            Aaplicador = "Barraza";
-            inciso = "Cual de estos es mas grande?";
+            NommbreSujeto = "Carlos";
+            ApellidosSujeto ="Rodriguez";
+            NumeroCaso = 10101010;
+            NombreAplicador = "Pancho";
+            ApellidoAplicador = "Barraza";
+            Inciso = "Cual de estos es mas grande?";
 
 
             System.out.println("!Bienvenido! ¿Estas listo para comenzar?");
@@ -39,15 +39,15 @@ public class IgualacionCLI {
 
 
         /*inciso 1*/
-            System.out.println(inciso);
+            System.out.println(Inciso);
             System.out.println("42  o   32");
 
         /*inciso 2*/
-            System.out.println(inciso);
+            System.out.println(Inciso);
             System.out.println("22  o   32");
 
         /*inciso 3*/
-            System.out.println(inciso);
+            System.out.println(Inciso);
             System.out.println("1000  o   0001");
 
 /* codigo para el reporte final*/
@@ -56,15 +56,15 @@ public class IgualacionCLI {
             System.out.println("Fecha y hora del ensayo: "+ ts);
 
             /*Estas dos lineas muestran el nombre y apellido del sujeto*/
-            System.out.print("Sujeto: "+ Nsujeto);
-            System.out.println(" " + Asujeto);
+            System.out.print("Sujeto: "+NommbreSujeto);
+            System.out.println(" " + ApellidosSujeto);
 
         /*Esta linea muestra el numero de caso*/
-            System.out.println("Expediente: " + numero);
+            System.out.println("Expediente: " + NumeroCaso);
 
         /*Esta Linea muestra el Nombre y apellido del aplicador*/
-            System.out.print("Aplicador: " + Naplicador);
-            System.out.println(" " + Aaplicador);
+            System.out.print("Aplicador: " + NombreAplicador);
+            System.out.println(" " + ApellidoAplicador);
 
 
     }
