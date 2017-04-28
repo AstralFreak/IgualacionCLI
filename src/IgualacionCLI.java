@@ -102,11 +102,11 @@ public class IgualacionCLI {
 
          /*Esta linea muestra las respuestas*/
 
-            System.out.println("Respuesta 1: " + Inciso1 + "    Completado en: " + total1);
+            System.out.println("Respuesta 1: " + Inciso1 + "    Completado en: " + total1 + " segundos.");
 
-            System.out.println("Respuesta 2: " + Inciso2 + "    Completado en: " + total2);
+            System.out.println("Respuesta 2: " + Inciso2 + "    Completado en: " + total2 + " segundos.");
 
-            System.out.println("Respuesta 3: "  + Inciso3 + "   Completado en: " + total3);
+            System.out.println("Respuesta 3: "  + Inciso3 + "   Completado en: " + total3 + " Segundos.");
 
             Scanner terminar = new Scanner(System.in);
 
