@@ -2,6 +2,7 @@
  * Created by Pablo Nogueira on 20/04/2017.
  */
 
+import java.io.FileWriter;
 import java.sql.Timestamp;
 import java.util.Date;
 import java.util.Scanner;
@@ -20,6 +21,7 @@ public class IgualacionCLI {
             String Inciso;
 
 
+
             Inciso = "Cual de estos es mas grande?";
 
 
@@ -32,6 +34,7 @@ public class IgualacionCLI {
             System.out.println("Presiona ENTER para continuar.....");
 
             iniciar.nextLine();
+
             System.out.println("Nombre del sujeto");
             NommbreSujeto = in.nextLine();
             System.out.println("Apellidos del sujeto");
@@ -54,25 +57,54 @@ public class IgualacionCLI {
 
         /*inciso 1*/
         int Inciso1;
+        boolean verdad1;
+        String calificacion1;
+
             System.out.println(Inciso);
             System.out.println("42  o   32");
             double Inicio1 = System.nanoTime();
             Inciso1 = in.nextInt();
             double Tiempo1 = System.nanoTime();
             double resta1 = Tiempo1 - Inicio1;
-            double total1 = resta1 / 1000000000;
+            double total1 = resta1 / 1000000000.0;
+
+            if(Inciso1 != 42){
+                verdad1 = false;
+                calificacion1 = " Incorrectamente.";
+        }
+            else {
+                verdad1 = true;
+                calificacion1 = " Correctamente.";
+            }
+
 
         /*inciso 2*/
         int Inciso2;
+            boolean verdad2;
+            String calificacion2;
             System.out.println(Inciso);
             System.out.println("22  o   32");
             double Inicio2 = System.nanoTime();
             Inciso2 = in.nextInt();
             double Tiempo2 = System.nanoTime();
 			double resta2 = Tiempo2 - Inicio2;
-			double total2 = resta2 / 1000000000;
+			double total2 = resta2 / 1000000000.0;
+
+            if(Inciso2 != 32){
+                verdad2 = false;
+                calificacion2 = " Incorrectamente.";
+            }
+            else {
+                verdad2 = true;
+                calificacion2 = " Correctamente.";
+            }
+
 
         /*inciso 3*/
+
+            boolean verdad3;
+            String calificacion3;
+
         int Inciso3;
             System.out.println(Inciso);
             System.out.println("1000  o   0001");
@@ -80,8 +112,31 @@ public class IgualacionCLI {
             Inciso3 = in.nextInt();
             double Tiempo3 = System.nanoTime();
 			double resta3 = Tiempo3 - Inicio3;
-			double total3 = resta3 / 1000000000;
-			
+			double total3 = resta3 / 1000000000.0;
+
+            if(Inciso3 != 1000){
+                verdad3 = false;
+                calificacion3 = " Incorrectamente.";
+            }
+            else {
+                verdad3 = true;
+                calificacion3 = " Correctamente.";
+            }
+
+
+/*Codigo para registro en CSV*/
+
+
+            /*public class CsvFileWriter {
+
+                //Delimiter used in CSV file
+                private static final String COMMA_DELIMITER = ",";
+                private static final String NEW_LINE_SEPARATOR = "\n";
+
+                //CSV file header
+                private static final String FILE_HEADER = "TimeStamp,Caso,NombreSujeto,ApellidoSujeto,NumeroEnsayo,NumeroAplicador,Respuesta1,Correcto1Tiempo1,Respuesta2,Correcto2,Tiempo2,Respuesta3,Correcto3,Tiempo3";*/
+
+
 
 /* codigo para el reporte final*/
 
@@ -102,17 +157,19 @@ public class IgualacionCLI {
 
          /*Esta linea muestra las respuestas*/
 
-            System.out.println("Respuesta 1: " + Inciso1 + "    Completado en: " + total1 + " segundos.");
+            System.out.println("Respuesta 1: " + Inciso1 + "    Completado en: " + total1 + " segundos." + calificacion1);
 
-            System.out.println("Respuesta 2: " + Inciso2 + "    Completado en: " + total2 + " segundos.");
+            System.out.println("Respuesta 2: " + Inciso2 + "    Completado en: " + total2 + " segundos." + calificacion2);
 
-            System.out.println("Respuesta 3: "  + Inciso3 + "   Completado en: " + total3 + " Segundos.");
+            System.out.println("Respuesta 3: "  + Inciso3 + "   Completado en: " + total3 + " Segundos." + calificacion3);
+
 
             Scanner terminar = new Scanner(System.in);
 
             System.out.println("Presiona ENTER para finalizar.....");
 
             terminar.nextLine();
+
 
     }
 
