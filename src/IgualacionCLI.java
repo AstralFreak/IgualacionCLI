@@ -2,10 +2,15 @@
  * Created by Pablo Nogueira on 20/04/2017.
  */
 
+import com.sun.xml.internal.ws.policy.privateutil.PolicyUtils;
+
 import java.io.FileWriter;
 import java.sql.Timestamp;
 import java.util.Date;
 import java.util.Scanner;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class IgualacionCLI {
 
@@ -126,16 +131,73 @@ public class IgualacionCLI {
 
 /*Codigo para registro en CSV*/
 
+            String stringCaso  = Long.toString(NumeroCaso);
+            String stringEnsayo = Long.toString(NumeroEnsayo);
+            String fileName = stringCaso + "-" + stringEnsayo + ".csv";
 
-            /*public class CsvFileWriter {
+
 
                 //Delimiter used in CSV file
-                private static final String COMMA_DELIMITER = ",";
-                private static final String NEW_LINE_SEPARATOR = "\n";
+          /*  String COMMA_DELIMITER = ",";
+                String NEW_LINE_SEPARATOR = "\n";
 
                 //CSV file header
-                private static final String FILE_HEADER = "TimeStamp,Caso,NombreSujeto,ApellidoSujeto,NumeroEnsayo,NumeroAplicador,Respuesta1,Correcto1Tiempo1,Respuesta2,Correcto2,Tiempo2,Respuesta3,Correcto3,Tiempo3";*/
+                 String FILE_HEADER = "TimeStamp,Caso,ApellidoSujeto,NombreSujeto,NumeroEnsayo," +
+                        "NumeroAplicador,Respuesta1,Correcto1Tiempo1,Respuesta2,Correcto2,Tiempo2,Respuesta3,Correcto3," +
+                        "Tiempo3";
 
+
+
+             try {
+                 fileWriter = new FileWriter(fileName);
+
+
+
+                        fileWriter = new FileWriter(fileName);
+
+                        fileWriter.append(FILE_HEADER.toString());
+                        fileWriter.append(NEW_LINE_SEPARATOR);
+                        fileWriter.append(String.valueOf(ts));
+                        fileWriter.append(COMMA_DELIMITER);
+                        fileWriter.append(String.valueOf(ApellidosSujeto));
+                        fileWriter.append(COMMA_DELIMITER);
+                        fileWriter.append(String.valueOf(NommbreSujeto));
+                        fileWriter.append(COMMA_DELIMITER);
+                        fileWriter.append(String.valueOf(NumeroEnsayo));
+                        fileWriter.append(COMMA_DELIMITER);
+                        fileWriter.append(String.valueOf(NumeroAplicador));
+                        fileWriter.append(COMMA_DELIMITER);
+                        fileWriter.append(String.valueOf(Inciso1));
+                        fileWriter.append(COMMA_DELIMITER);
+                        fileWriter.append(String.valueOf(verdad1));
+                        fileWriter.append(COMMA_DELIMITER);
+                        fileWriter.append(String.valueOf(total1));
+                        fileWriter.append(COMMA_DELIMITER);
+                        fileWriter.append(String.valueOf(Inciso2));
+                        fileWriter.append(COMMA_DELIMITER);
+                        fileWriter.append(String.valueOf(verdad2));
+                        fileWriter.append(COMMA_DELIMITER);
+                        fileWriter.append(String.valueOf(total2));
+                        fileWriter.append(COMMA_DELIMITER);
+                        fileWriter.append(String.valueOf(Inciso3));
+                        fileWriter.append(COMMA_DELIMITER);
+                        fileWriter.append(String.valueOf(verdad3));
+                        fileWriter.append(COMMA_DELIMITER);
+                        fileWriter.append(String.valueOf(total3));
+                  }
+
+             catch (Exception e) {
+                 e.printStackTrace();
+             }finally {
+                 try {
+                     fileWriter.flush();
+                     fileWriter.close();
+                 }
+                 catch (IOException e){
+                     e.printStackTrace();
+                 }
+
+             }*/
 
 
 /* codigo para el reporte final*/
@@ -162,6 +224,8 @@ public class IgualacionCLI {
             System.out.println("Respuesta 2: " + Inciso2 + "    Completado en: " + total2 + " segundos." + calificacion2);
 
             System.out.println("Respuesta 3: "  + Inciso3 + "   Completado en: " + total3 + " Segundos." + calificacion3);
+
+           /* System.out.println(fileName);*/
 
 
             Scanner terminar = new Scanner(System.in);
