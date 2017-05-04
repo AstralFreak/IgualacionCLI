@@ -138,15 +138,16 @@ public class IgualacionCLI {
 
 
                 //Delimiter used in CSV file
-          /*  String COMMA_DELIMITER = ",";
+            String COMMA_DELIMITER = ",";
                 String NEW_LINE_SEPARATOR = "\n";
 
                 //CSV file header
                  String FILE_HEADER = "TimeStamp,Caso,ApellidoSujeto,NombreSujeto,NumeroEnsayo," +
-                        "NumeroAplicador,Respuesta1,Correcto1Tiempo1,Respuesta2,Correcto2,Tiempo2,Respuesta3,Correcto3," +
+                        "NumeroAplicador,Respuesta1,Correcto1,Tiempo1,Respuesta2,Correcto2,Tiempo2,Respuesta3,Correcto3," +
                         "Tiempo3";
 
 
+                    FileWriter fileWriter = null;
 
              try {
                  fileWriter = new FileWriter(fileName);
@@ -155,7 +156,7 @@ public class IgualacionCLI {
 
                         fileWriter = new FileWriter(fileName);
 
-                        fileWriter.append(FILE_HEADER.toString());
+                        fileWriter.append(FILE_HEADER);
                         fileWriter.append(NEW_LINE_SEPARATOR);
                         fileWriter.append(String.valueOf(ts));
                         fileWriter.append(COMMA_DELIMITER);
@@ -197,7 +198,7 @@ public class IgualacionCLI {
                      e.printStackTrace();
                  }
 
-             }*/
+             }
 
 
 /* codigo para el reporte final*/
@@ -225,7 +226,7 @@ public class IgualacionCLI {
 
             System.out.println("Respuesta 3: "  + Inciso3 + "   Completado en: " + total3 + " Segundos." + calificacion3);
 
-           /* System.out.println(fileName);*/
+            System.out.println("El reporte ha sido guardado como: " +fileName);
 
 
             Scanner terminar = new Scanner(System.in);
