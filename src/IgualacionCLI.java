@@ -160,6 +160,8 @@ public class IgualacionCLI {
                         fileWriter.append(NEW_LINE_SEPARATOR);
                         fileWriter.append(String.valueOf(ts));
                         fileWriter.append(COMMA_DELIMITER);
+                        fileWriter.append(String.valueOf(NumeroCaso));
+                        fileWriter.append(COMMA_DELIMITER);
                         fileWriter.append(String.valueOf(ApellidosSujeto));
                         fileWriter.append(COMMA_DELIMITER);
                         fileWriter.append(String.valueOf(NommbreSujeto));
